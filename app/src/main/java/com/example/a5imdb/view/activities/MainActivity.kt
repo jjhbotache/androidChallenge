@@ -1,4 +1,4 @@
-package com.example.a5imdb.activities
+package com.example.a5imdb.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

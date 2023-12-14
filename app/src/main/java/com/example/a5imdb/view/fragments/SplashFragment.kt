@@ -1,4 +1,4 @@
-package com.example.a5imdb.fragments
+package com.example.a5imdb.view.fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -40,7 +40,7 @@ class SplashFragment : Fragment() {
                 requireActivity().supportFragmentManager.beginTransaction().remove(fragment).commit()
                 requireActivity().supportFragmentManager.popBackStackImmediate(fragmentTag, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }*/
-                    }
+            }
 
         Handler().postDelayed(sendToSecondScreen, 1500)
 

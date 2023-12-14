@@ -1,4 +1,4 @@
-package com.example.a5imdb.fragments
+package com.example.a5imdb.view.fragments
 
 import android.graphics.Color
 import android.os.Bundle
