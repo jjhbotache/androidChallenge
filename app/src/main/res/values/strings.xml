@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">IMDb</string>
+
+    //texts
+    //login
+    <string name="user_label">User</string>
+    <string name="password_label">Password</string>
+    <string name="forgot_password_text">¿Did you forget your password?</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_alternative_text">You can also login with:</string>
+    <string name="no_account_text">Still without an account</string>
+    <string name="register_text">Register</string>
+    <string name="guest_text">Continue as a guest</string>
+
+    //register
+    <string name="register_title">Create your account</string>
+    <string name="password_warning_text">The password must have at least 8 characters</string>
+    <string name="create_text">Create</string>
+
+</resources>
