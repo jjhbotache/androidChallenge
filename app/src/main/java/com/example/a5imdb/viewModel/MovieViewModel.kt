@@ -6,7 +6,7 @@ import com.example.a5imdb.model.MovieModel
 import com.example.a5imdb.model.MovieProvider
 
 class MovieViewModel : ViewModel() {
-    private val moviesLiveData : MutableLiveData< MutableList<MovieModel> > = MutableLiveData()
+    val moviesLiveData : MutableLiveData< MutableList<MovieModel> > = MutableLiveData()
 
     fun getNextMovie() {
         val currentSize = moviesLiveData.value?.size ?: 0
@@ -18,6 +18,4 @@ class MovieViewModel : ViewModel() {
             moviesLiveData.value = currentMoviesList
         }
     }
-
-
 }

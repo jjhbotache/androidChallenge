@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a5imdb.R
@@ -19,6 +22,7 @@ import com.example.a5imdb.mocks.movie2
 import com.example.a5imdb.mocks.movie3
 import com.example.a5imdb.mocks.movie4
 import com.example.a5imdb.databinding.FragmentSearchBinding
+import com.example.a5imdb.viewModel.MovieViewModel
 import com.google.gson.Gson
 import khttp.get
 import kotlinx.coroutines.GlobalScope
@@ -27,6 +31,7 @@ import kotlinx.coroutines.runBlocking
 
 class Search : Fragment() {
     private lateinit var binding: FragmentSearchBinding
+    private val movieViewModel : MovieViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,9 +46,19 @@ class Search : Fragment() {
 
         val searchInput: EditText = binding.searchInput
         val itemsContainer: RecyclerView = binding.itemsContainer
-        val data: List<Movie> = listOf(movie1, movie2, movie3, movie4)
+        val searchButton : ImageView = binding.searchMagnifier
+        //val data: List<Movie> = listOf(movie1, movie2, movie3, movie4)
 
-        searchInput.addTextChangedListener {
+        searchButton.setOnClickListener {movieViewModel.getNextMovie()}
+        movieViewModel.moviesLiveData.observe(viewLifecycleOwner, Observer {
+            itemsContainer.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+            itemsContainer.adapter = MoviesAdapter(it)
+        })
+
+    }
+
+
+        /*searchButton.setOnClickListener {
             lateinit var data: List<Movie>
             val task = GlobalScope.launch { data = askAndSetDesigns(searchInput.text.toString()) }
             runBlocking {
@@ -56,8 +71,8 @@ class Search : Fragment() {
 
         itemsContainer.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-        itemsContainer.adapter = MoviesAdapter(data)
-    }
+        itemsContainer.adapter = MoviesAdapter(data)}*/
+
 
     private suspend fun askAndSetDesigns(query: String): List<Movie> {
         val data: MutableList<Movie> = mutableListOf()

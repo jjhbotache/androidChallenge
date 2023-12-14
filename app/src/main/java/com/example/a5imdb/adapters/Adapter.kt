@@ -9,28 +9,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.a5imdb.R
 import com.example.a5imdb.classes.Movie
+import com.example.a5imdb.model.MovieModel
+import com.example.a5imdb.viewHolders.MoviesViewHolder
 
 
-class MoviesAdapter(private val dataList: List<Movie>) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
+class MoviesAdapter(private val dataList: List<MovieModel>) : RecyclerView.Adapter<MoviesViewHolder>() {
 
 
-    // this class creates objects with 1 property extending from the Recycler.ViewHolder
-    //this class will be used after to create a viewHolder
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val titleText : TextView = itemView.findViewById(R.id.title)
-        val yearText : TextView = itemView.findViewById(R.id.year)
-        val castingText : TextView = itemView.findViewById(R.id.casting)
-        val image : ImageView = itemView.findViewById(R.id.movieImage)
-    }
 
     //when we need to create a ViewHolder:
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_card, parent, false)
-        return ViewHolder(view)
+        return MoviesViewHolder(view)
     }
 
     // here is where the ViewHolder is update with the info
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
 
         val currentItem = dataList[position]
 
@@ -42,9 +36,5 @@ class MoviesAdapter(private val dataList: List<Movie>) : RecyclerView.Adapter<Mo
         holder.castingText.text = currentItem.actors.joinToString(", ")
 
     }
-
-    //why is this important?
-    override fun getItemCount(): Int {
-        return dataList.size
-    }
+    override fun getItemCount(): Int = dataList.size
 }
