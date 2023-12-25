@@ -1,4 +1,4 @@
-package com.example.a5imdb.functions
+package com.example.a5imdb.domain.functions
 
 import android.content.Context
 import android.widget.Button

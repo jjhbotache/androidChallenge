@@ -1,4 +1,4 @@
-package com.example.a5imdb.view.fragments
+package com.example.a5imdb.presenter.view.fragments
 
 import android.os.Bundle
 import android.os.Handler

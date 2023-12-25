@@ -1,4 +1,4 @@
-package com.example.a5imdb.classes
+package com.example.a5imdb.data.classes
 import kotlinx.serialization.Serializable
 @Serializable
 data class SearchResponse(

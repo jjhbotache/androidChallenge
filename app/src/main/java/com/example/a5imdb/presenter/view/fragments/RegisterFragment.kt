@@ -1,4 +1,4 @@
-package com.example.a5imdb.view.fragments
+package com.example.a5imdb.presenter.view.fragments
 
 import android.graphics.Color
 import android.os.Bundle
@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.a5imdb.R
 import com.example.a5imdb.databinding.FragmentRegisterBinding
-import com.example.a5imdb.functions.checkInputsFullFilledAndUpdateButton
+import com.example.a5imdb.domain.functions.checkInputsFullFilledAndUpdateButton
 
 class Register : Fragment() {
     private lateinit var binding: FragmentRegisterBinding

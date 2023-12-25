@@ -1,4 +1,4 @@
-package com.example.a5imdb.model
+package com.example.a5imdb.data.model
 
 class MovieModel(
     val title: String,

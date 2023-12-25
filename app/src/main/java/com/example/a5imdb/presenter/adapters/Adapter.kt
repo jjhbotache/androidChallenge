@@ -1,16 +1,12 @@
-package com.example.a5imdb.adapters
+package com.example.a5imdb.presenter.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.a5imdb.R
-import com.example.a5imdb.classes.Movie
-import com.example.a5imdb.model.MovieModel
-import com.example.a5imdb.viewHolders.MoviesViewHolder
+import com.example.a5imdb.data.model.MovieModel
+import com.example.a5imdb.presenter.viewHolders.MoviesViewHolder
 
 
 class MoviesAdapter(private val dataList: List<MovieModel>) : RecyclerView.Adapter<MoviesViewHolder>() {

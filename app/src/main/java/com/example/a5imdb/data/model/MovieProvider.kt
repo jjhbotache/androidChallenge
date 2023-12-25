@@ -1,6 +1,4 @@
-package com.example.a5imdb.model
-
-import com.example.a5imdb.classes.Movie
+package com.example.a5imdb.data.model
 
 class MovieProvider {
     companion object{

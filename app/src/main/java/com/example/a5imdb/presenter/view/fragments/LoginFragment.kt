@@ -1,4 +1,4 @@
-package com.example.a5imdb.view.fragments
+package com.example.a5imdb.presenter.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.a5imdb.databinding.FragmentLoginBinding
-import com.example.a5imdb.functions.checkInputsFullFilledAndUpdateButton
+import com.example.a5imdb.domain.functions.checkInputsFullFilledAndUpdateButton
 
 class LoginFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.example.a5imdb.viewHolders
+package com.example.a5imdb.presenter.viewHolders
 
 import android.view.View
 import android.widget.ImageView
